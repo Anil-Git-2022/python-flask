@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" type="text/css">
+{% endblock %}
+
+{% block body %}
+{% if session['name'] %}
+<form action="/login" method = "POST" enctype="multipart/form-data">
+    <p>name <input type = "text" name = "name" /></p>
+    <p>age <input type = "integer" name = "age" /></p>
+    <p>Upload <input type = "file" name = "upload" /></p>
+    <p><input type = "submit" value = "Submit" /></p>
+ </form>
+{% else %}
+<p>Sorry Access restricted.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" type="text/css">
+{% endblock %}
+
+{% block body %}
+{% if session['name'] %}
+<form action="/edit/{{ data[2] }}" method = "POST">
+    <p>name <input type = "text" name = "name" value="{{ data[0] }}" /></p>
+    <p>age <input type = "integer" name = "age" value="{{ data[1] }}" /></p>
+    <p><input type = "submit" value = "Submit" /></p>
+ </form>
+ {% else %}
+ <p>Sorry Access restricted.</p>
+ {% endif %}
+{% endblock %}

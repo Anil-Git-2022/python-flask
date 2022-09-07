@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" type="text/css">
+{% endblock %}
+
+{% block body %}
+<form action="/log" method = "POST">
+    <p>Username <input type = "text" name = "username" /></p>
+    <p>Password <input type = "password" name = "password" /></p>
+    <p><input type = "submit" value = "Log In" /></p>
+ </form>
+ <div>Click here to register<a href="/register">here</a></div>
+{% endblock %}
