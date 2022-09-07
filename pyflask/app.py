@@ -49,7 +49,7 @@ def login():
         path = os.path.join(app.config['UPLOAD_FOLDER'], file1.filename)
         file1.save(path)
 
-        msg = Message('Hello', sender = 'Anil Harjani', recipients = ['anilharjani51@gmail.com'])
+        msg = Message('Hello', sender = 'Anil Harjani', recipients = ['demo51@gmail.com'])
         msg.body = "Test mail."
         mail.send(msg)
 
